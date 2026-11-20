@@ -173,3 +173,37 @@ class AlquilerEquipo(Servicio):
             f"{self.cantidad} equipos. "
             f"Precio por equipo: ${self.precio:,.2f}."
         )
+# ==============================================================================
+# COMPLEMENTO ESTUDIANTE 4: Tercer servicio especializado y sobrecarga de costos
+# ==============================================================================
+
+class AsesoriaEspecializada(Servicio):
+    """Servicio especializado de consultoría técnica o académica."""
+
+    def __init__(self, sesiones=1, especialidad="Desarrollo de Software", nombre="Asesoría Especializada", precio=60000):
+        super().__init__(nombre, precio)
+        if not isinstance(sesiones, int) or sesiones <= 0:
+            logger.error("Número de sesiones inválido: %s", sesiones)
+            raise ParametroServicioInvalidoError("Las sesiones deben ser un entero mayor a cero.")
+        if not especialidad or not str(especialidad).strip():
+            logger.error("Especialidad vacía en AsesoriaEspecializada")
+            raise ParametroServicioInvalidoError("La especialidad es obligatoria.")
+        self.sesiones = sesiones
+        self.especialidad = str(especialidad).strip()
+
+    def calcular_costo(self):
+        return round(self.precio * self.sesiones, 2)
+
+    def calcular_costo_total(self, porcentaje_impuesto=0.0, descuento=0.0):
+        """Método sobrecargado mediante parámetros opcionales (impuestos y descuentos)."""
+        if porcentaje_impuesto < 0 or descuento < 0:
+            raise ParametroServicioInvalidoError("Impuestos y descuentos no pueden ser negativos.")
+        subtotal = self.calcular_costo()
+        if descuento > subtotal:
+            raise ParametroServicioInvalidoError("El descuento no puede superar el subtotal.")
+        valor_con_descuento = subtotal - descuento
+        total = valor_con_descuento * (1 + porcentaje_impuesto)
+        return round(total, 2)
+
+    def descripcion(self):
+        return f"{self.nombre} ({self.especialidad}) - {self.sesiones} sesión(es) x ${self.precio:,.2f}"

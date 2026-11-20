@@ -1,0 +1,27 @@
+2026-11-20 15:20:01,003 - INFO - Cliente registrado: Laura Gómez
+2026-11-20 15:20:01,004 - ERROR - Correo electronico invalido
+2026-11-20 15:20:01,005 - ERROR - Nombre del cliente faltante
+2026-11-20 15:20:01,006 - INFO - Servicio creado: Reserva de sala
+2026-11-20 15:20:01,006 - INFO - Reserva de sala creada para 3 horas.
+2026-11-20 15:20:01,007 - INFO - Servicio creado: Alquiler de equipos
+2026-11-20 15:20:01,007 - INFO - Alquiler de 4 equipos creado.
+2026-11-20 15:20:01,008 - INFO - Servicio creado: Asesoría Especializada
+2026-11-20 15:20:01,009 - INFO - Servicio creado: Asesoría Especializada
+2026-11-20 15:20:01,009 - ERROR - Número de sesiones inválido: -2
+2026-11-20 15:20:01,010 - INFO - Reserva creada: RES-001 | Cliente: Laura Gómez | Servicio: Reserva de sala
+2026-11-20 15:20:01,010 - INFO - Proceso de inicialización finalizado para reserva: RES-001
+2026-11-20 15:20:01,011 - INFO - Costo de reserva de sala calculado: 150000.00
+2026-11-20 15:20:01,011 - INFO - Reserva RES-001 CONFIRMADA exitosamente.
+2026-11-20 15:20:01,012 - INFO - Revisión de estado completada para reserva RES-001 (Estado actual: Confirmada)
+2026-11-20 15:20:01,012 - INFO - Costo de reserva de sala calculado: 150000.00
+2026-11-20 15:20:01,012 - INFO - Costo de reserva de sala calculado: 150000.00
+2026-11-20 15:20:01,013 - INFO - Reserva creada: RES-002 | Cliente: Laura Gómez | Servicio: Asesoría Especializada
+2026-11-20 15:20:01,014 - INFO - Proceso de inicialización finalizado para reserva: RES-002
+2026-11-20 15:20:01,014 - INFO - Reserva RES-002 CANCELADA. Motivo: Cambio de horario del cliente
+2026-11-20 15:20:01,015 - INFO - Cierre de operación de cancelación en reserva RES-002.
+2026-11-20 15:20:01,015 - WARNING - Intento inválido al confirmar RES-002: No se puede confirmar una reserva que ya fue cancelada.
+2026-11-20 15:20:01,016 - INFO - Revisión de estado completada para reserva RES-002 (Estado actual: Cancelada)
+2026-11-20 15:20:01,017 - ERROR - Fallo al crear reserva (RES-003): Debe asociar un objeto Cliente válido.
+2026-11-20 15:20:01,018 - INFO - Proceso de inicialización finalizado para reserva: RES-003
+2026-11-20 15:20:01,019 - INFO - Costo de reserva de sala calculado: 150000.00
+2026-11-20 15:20:01,019 - ERROR - Error calculando total de reserva RES-001: El descuento excede el valor base del servicio.
